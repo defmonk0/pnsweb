@@ -1,0 +1,13 @@
+<template name="news">
+	<section class="content">
+		<h1>ALLIANCE NEWS</h1>
+		<hr>
+		{{#if isApproved}}
+			APPROVED!
+		{{else}}
+			<p class="text-center">You must be approved by an administrator to see the news board.</p>
+		{{/if}}
+		<hr>
+		<a class="back-button" href="{{pathFor 'home'}}"><span class="fa fa-fw fa-arrow-circle-o-left"></span> Back</a>
+	</section>
+</template>

@@ -1,0 +1,33 @@
+.npcitem {
+    display: inline-table;
+    width: 400px;
+    margin: 14px;
+}
+
+.npcitem tr td {
+    margin-right: auto;
+    margin-left: auto;
+
+    text-align: center;
+}
+
+.npcitem tr td img {
+    width: 100px;
+    height: 100px;
+}
+
+.npcitem tr td.em {
+    text-shadow: 0 0 .2em rgb(0, 255, 255);
+}
+
+.npcitem tr td.ex {
+    text-shadow: 0 0 .2em rgb(255, 128, 0);
+}
+
+.npcitem tr td.ki {
+    text-shadow: 0 0 .2em rgb(0, 255, 0);
+}
+
+.npcitem tr td.th {
+    text-shadow: 0 0 .2em rgb(255, 0, 0);
+}

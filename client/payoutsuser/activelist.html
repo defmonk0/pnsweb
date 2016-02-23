@@ -1,0 +1,10 @@
+<template name="activelist">
+	{{#each characters}}
+		<div class="character active">
+			<a href="#" id="updateChar" data-name="{{charName}}" data-change-to="false">
+				<i class="fa fa-fw fa-chevron-left"></i>
+			</a>
+			{{charName}}
+		</div>
+	{{/each}}
+</template>

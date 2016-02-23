@@ -1,0 +1,40 @@
+<template name="npc">
+	<section class="content">
+		<h1>NPC Damage Reference</h1>
+		<hr>
+		<p>
+			<input type="text" id="search" placeholder="Filter NPCs" data-bind="value: search" autocomplete="off">
+			<small><small>
+				Start typing to filter NPCs by name or location.
+			</small></small>
+		</p>
+		{{#each npcsfiltered}}
+			<table class="npcitem">
+				<tr>
+					<td colspan="5" rowspan="1">{{name}} <small><small>{{location}}</small></small></td>
+				</tr>
+				<tr>
+					<td colspan="1" rowspan="4"><img src="{{img}}"></td>
+					<td colspan="4" rowspan="1" width="100%"><small>Resistances</small></td>
+				</tr>
+				<tr>
+					<td colspan="1" rowspan="1" class="em">{{resists.em}}</td>
+					<td colspan="1" rowspan="1" class="ex">{{resists.ex}}</td>
+					<td colspan="1" rowspan="1" class="ki">{{resists.ki}}</td>
+					<td colspan="1" rowspan="1" class="th">{{resists.th}}</td>
+				</tr>
+				<tr>
+					<td colspan="4" rowspan="1"><small>Damage Profile</small></td>
+				</tr>
+				<tr>
+					<td colspan="1" rowspan="1" class="em">{{damage.em}}</td>
+					<td colspan="1" rowspan="1" class="ex">{{damage.ex}}</td>
+					<td colspan="1" rowspan="1" class="ki">{{damage.ki}}</td>
+					<td colspan="1" rowspan="1" class="th">{{damage.th}}</td>
+				</tr>
+			</table>
+		{{/each}}
+		<hr>
+		<a class="back-button" href="{{pathFor 'tools'}}"><span class="fa fa-fw fa-arrow-circle-o-left"></span> Back</a>
+	</section>
+</template>

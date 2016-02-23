@@ -1,0 +1,22 @@
+<template name="utilitybar">
+	<div class="utility-left">
+		<img src="hex_logo.png">
+		<a class="name" href="{{pathFor 'home'}}">PHOENIX NAVAL SYSTEMS</a><br>
+		{{#if isAdmin}}
+			<a class="admin" href="{{pathFor 'admin'}}">
+				<span class="fa fa-cog"></span>
+				Administration
+			</a>
+		{{/if}}
+	</div>
+	<div class="utility-right">
+		{{#each characters}}
+			<a href="#"
+				title="{{formatVariable skillPoints 'short'}} Skillpoints"
+				alt="{{formatVariable skillPoints 'short'}} Skillpoints">
+				<img src="https://image.eveonline.com/Character/{{characterID}}_64.jpg">
+			</a>
+		{{/each}}
+	</div>
+	<div class="utility-clear"></div>
+</template>

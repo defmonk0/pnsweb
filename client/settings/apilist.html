@@ -1,0 +1,12 @@
+<template name="apilist">
+	{{#each apis}}
+		<div id="api-{{id}}">
+			API ID:
+			<span class="api" title="{{key}}">{{id}}</span>
+			<a href="#" id="remAPI" data-id="{{id}}" data-key="{{key}}">
+				<span class="fa fa-fw fa-minus"></span>
+				Remove
+			</a>
+		</div>
+	{{/each}}
+</template>

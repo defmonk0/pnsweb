@@ -1,0 +1,77 @@
+<template name="layout">
+	{{#if currentUser}}
+		{{>utilitybar}}
+		<div id="content">
+			{{#transitioner}}
+				{{>yield}}
+			{{/transitioner}}
+		</div>
+	{{else}}
+		{{>loginButtons}}
+		<div class="titleBar">
+			<div class="logo">
+				<img src="hex_logo.png">
+			</div>
+			<div class="title">
+				PHOENIX NAVAL SYSTEMS
+			</div>
+		</div>
+		<div class="contact">
+			<table>
+				<tr>
+					<td class="title">CEO:</td>
+					<td class="name">
+						<a href="https://gate.eveonline.com/Profile/Naava%20Edios"
+							target="_blank">
+							Naava Edios
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="title">Diplomatic Relations:</td>
+					<td class="name">
+						<a href="https://gate.eveonline.com/Profile/Lara%20Edios"
+							target="_blank">
+							Lara Edios
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="title">Recruitment:</td>
+					<td class="name">
+						<a href="https://gate.eveonline.com/Profile/Kadeshi%20Pride"
+							target="_blank">
+							Kadeshi Pride
+						</a>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<table class="links">
+							<tr>
+								<td>
+									<a href="https://gate.eveonline.com/Alliance/Phoenix%20Naval%20Systems"
+										target="_blank">
+										EVE Gate
+									</a>
+								</td>
+								<td>
+									<a href="https://zkillboard.com/alliance/99004604/"
+										target="_blank">
+										zKillboard
+									</a>
+								</td>
+								<td>
+									<a href="https://eve-kill.net/?a=alliance_detail&all_id=10254&view=kills"
+										target="_blank">
+										Eve-Kill
+									</a>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+	{{/if}}
+</template>

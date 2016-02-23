@@ -1,0 +1,76 @@
+div.utility-left {
+    float: left;
+    margin-top: 8px;
+    margin-left: 8px;
+
+    line-height: 0;
+
+    opacity: .3;
+}
+
+div.utility-left img {
+    height: 29px;
+}
+
+div.utility-left a.name {
+    position: relative;
+    top: -5px;
+
+    font-family: "Impact", sans-serif;
+    font-size: 18pt;
+
+    text-decoration: none;
+    letter-spacing: 2px;
+
+    color: #fff;
+}
+
+div.utility-left a.admin {
+    position: relative;
+    top: -1px;
+
+    font-family: "Impact", sans-serif;
+    font-size: 16pt;
+
+    transition: opacity .3s;
+    text-decoration: none;
+    letter-spacing: 1px;
+
+    opacity: .5;
+    color: #fff;
+}
+
+div.utility-left a.admin:hover {
+    opacity: .8;
+}
+
+div.utility-left a.admin span {
+    position: relative;
+    top: 3px;
+
+    margin-left: 3px;
+
+    font-size: 29px;
+}
+/* ============================================================ */
+div.utility-right {
+    float: right;
+    margin-top: 8px;
+    margin-right: 8px;
+}
+
+div.utility-right img {
+    margin-left: 4px;
+
+    transition: opacity .5s;
+
+    opacity: .4;
+}
+
+div.utility-right img:hover {
+    opacity: 1.0;
+}
+/* ============================================================ */
+div.utility-clear {
+    clear: both;
+}

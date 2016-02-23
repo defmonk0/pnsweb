@@ -1,0 +1,106 @@
+<template name="admin">
+	<section class="content">
+		<h1>USER ADMINISTRATION</h1>
+		<hr>
+		{{#if currentUserIsAdmin}}
+			{{#each users}}
+				<table class="thirds">
+					<tr>
+						<td>
+							<u>User ID:</u>
+							{{_id}}
+						</td>
+						<td>
+							<u>Phone Number:</u>
+							{{phonenum}}
+						</td>
+						<td>
+							<u>Timezone:</u>
+							{{timezone}}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="isApproved_{{_id}}">
+								<input type="checkbox"
+									class="data_checkbox"
+									id="isApproved_{{_id}}"
+									value="true"
+									checked="{{isApproved}}">
+								Is Approved
+							</label>
+						</td>
+						<td>
+							<label for="isVeteran_{{_id}}">
+								<input type="checkbox"
+									class="data_checkbox"
+									id="isVeteran_{{_id}}"
+									value="true"
+									checked="{{isVeteran}}">
+								Is Veteran
+							</label>
+						</td>
+						<td>
+							<label for="isAdmin_{{_id}}">
+								<input type="checkbox"
+									class="data_checkbox"
+									id="isAdmin_{{_id}}"
+									value="true"
+									checked="{{isAdmin}}">
+								Is Administrator
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p><u>Characters:</u></p>
+							<div class="characterList">
+								{{#each characters}}
+									<div class="character">
+										<img src="https://image.eveonline.com/Character/{{characterID}}_32.jpg">
+										<span>{{name}}</span>
+									</div>
+								{{/each}}
+							</div>
+						</td>
+						<td colspan="2">
+							<p><u>API Keys:</u></p>
+							<div class="apiList">
+								{{#each apis}}
+									<div class="apiItem">
+										<table class="apiInfo">
+											<tr>
+												<td>
+													Access Mask:<br>
+													{{info.accessMask}}
+												</td>
+												<td>
+													Expiration:<br>
+													{{info.expires}}
+												</td>
+												<td>
+													Type:<br>
+													{{info.type}}
+												</td>
+											</tr>
+										</table>
+										<table class="apiKey">
+											<tr>
+												<td>KeyID: <input type="text" value="{{id}}" readonly="readonly"></td>
+												<td>vCode: <input type="text" value="{{key}}" readonly="readonly"></td>
+											</tr>
+										</table>
+									</div>
+								{{/each}}
+							</div>
+						</td>
+					</tr>
+				</table>
+			<hr>
+			{{/each}}
+		{{else}}
+			<p class="text-center">You must be an administrator to see the administration panel.</p>
+		{{/if}}
+		<a class="back-button" href="{{pathFor 'home'}}"><span class="fa fa-fw fa-arrow-circle-o-left"></span> Back</a>
+	</section>
+</template>

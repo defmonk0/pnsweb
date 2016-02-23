@@ -1,0 +1,51 @@
+<template name="payoutsuser">
+	<section class="content">
+		<h1>USER COMBAT SITE TRACKING</h1>
+		<hr>
+		{{#if isApproved}}
+			<table class="activetable">
+				<thead>
+					<tr>
+						<th>Character List</th>
+						<th>Active Characters</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<div class="characterlist">
+								{{>characterlist}}
+							</div>
+							<br>
+							<table class="addnew">
+								<tr>
+									<td width="30%">
+										New Character:
+									</td>
+									<td width="55%">
+										<input type="text" id="charName" name="charName" placeholder="Character Name">
+									</td>
+									<td width="15%">
+										<a href="#" id="addUser">
+											<span class="fa fa-fw fa-plus"></span>
+											Add
+										</a>
+									</td>
+								</tr>
+							</table>
+						</td>
+						<td>
+							<div class="activelist">
+								{{>activelist}}
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		{{else}}
+			<p class="text-center">You must be approved by an administrator to see the member directory.</p>
+		{{/if}}
+		<hr>
+		<a class="back-button" href="{{pathFor 'payouts'}}"><span class="fa fa-fw fa-arrow-circle-o-left"></span> Back</a>
+	</section>
+</template>

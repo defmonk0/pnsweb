@@ -1,0 +1,75 @@
+<template name="settings">
+	<section class="content">
+		<h1>USER SETTINGS</h1>
+		<hr>
+		<form id="settingsform">
+			Phone Number:<br>
+			<p><input type="text" id="phonenum" name="phonenum" placeholder="Phone Number" value="{{data.phonenum}}"></p>
+			<small><small>
+				This is a phone number you wish to be able to be contacted on via text message. Only corporate executives can see this number, and we generally only use it in cases of EVE emergencies. Please include your entire phone number, including both country and area/province codes.
+			</small></small>
+			<br><br>
+			Time Zone:<br>
+			<p><select id="timezone" name="timezone">
+				{{>tzoptions}}
+			</select></p>
+			<small><small>
+				Please select your timezone from the list. This is useful to determine differences in time for everyone, and may be used on the site to automatically display local times to you.
+			</small></small>
+			<br><br>
+			API Information (<a href="https://community.eveonline.com/support/api-key/CreatePredefined?accessMask=1073741823" target="_blank">New Key</a>):<br>
+			<div class="apis">
+				{{>apilist}}
+			</div>
+			<table border="0" cellpadding="5px" cellspacing="5px" width="100%">
+				<tr>
+					<td width="10%">Key ID: </td>
+					<td width="35%"><input type="text" id="apiid" name="apiid" placeholder="API ID"></td>
+					<td width="10%">Ver. Code: </td>
+					<td width="35%"><input type="text" id="apikey" name="apikey" placeholder="API Key"></td>
+					<td width="10%"><a href="#" id="addAPI"><span class="fa fa-fw fa-plus"></span>Add</a></td>
+				</tr>
+			</table>
+			<small><small>
+				This is your API Key. This is also only accessible by corporate executives, should provide full API access, and is REQUIRED OF ALL ALLIANCE MEMBERS. The link above sends you to the API page to make a new key. If you have more than one account involved in the alliance, you can manage the keys for more than one eve account on this one website account.
+			</small></small>
+			<br><br>
+			Custom Links:<br>
+			<table border="0" cellpadding="5px" cellspacing="5px" width="100%">
+				<tr>
+					<td width="10%">URL: </td>
+					<td width="40%"><input type="text" id="link1" name="link1" placeholder="Custom URL #1" value="{{data.links.[0].url}}"></td>
+					<td width="10%">Name: </td>
+					<td width="40%"><input type="text" id="linkname1" name="linkname1" placeholder="Name For URL #1" value="{{data.links.[0].name}}"></td>
+				</tr>
+				<tr>
+					<td width="10%">URL: </td>
+					<td width="40%"><input type="text" id="link2" name="link2" placeholder="Custom URL #2" value="{{data.links.[1].url}}"></td>
+					<td width="10%">Name: </td>
+					<td width="40%"><input type="text" id="linkname2" name="linkname2" placeholder="Name For URL #2" value="{{data.links.[1].name}}"></td>
+				</tr>
+				<tr>
+					<td width="10%">URL: </td>
+					<td width="40%"><input type="text" id="link3" name="link3" placeholder="Custom URL #3" value="{{data.links.[2].url}}"></td>
+					<td width="10%">Name: </td>
+					<td width="40%"><input type="text" id="linkname3" name="linkname3" placeholder="Name For URL #3" value="{{data.links.[2].name}}"></td>
+				</tr>
+				<tr>
+					<td width="10%">URL: </td>
+					<td width="40%"><input type="text" id="link4" name="link4" placeholder="Custom URL #4" value="{{data.links.[3].url}}"></td>
+					<td width="10%">Name: </td>
+					<td width="40%"><input type="text" id="linkname4" name="linkname4" placeholder="Name For URL #4" value="{{data.links.[3].name}}"></td>
+				</tr>
+			</table>
+			<small><small>
+				Custom Links are used as shortcuts and appear in the links menu section. Enter one here and it will be added to the hex grid for easy access. You can add up to 4 links. Please use full URLs when supplying a link: ie. http://google.com/
+			</small></small>
+			<div class="buttons">
+				<!--button type="reset"><span class="fa fa-fw fa-refresh"></span> Reset</button-->
+				<button type="submit"><span class="fa fa-fw fa-save"></span> Save All</button>
+			</div>
+		</form>
+		<hr>
+		<a class="back-button" href="{{pathFor 'home'}}"><span class="fa fa-fw fa-arrow-circle-o-left"></span> Back</a>
+	</section>
+</template>

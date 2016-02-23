@@ -1,0 +1,13 @@
+table.activetable {
+    width: 100%;
+}
+
+table.activetable > tbody > tr > td {
+    width: 50%;
+
+    vertical-align: top;
+}
+
+table.addnew {
+    width: 100%;
+}
